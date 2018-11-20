@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F3517E821A3C38100780280 /* FooObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517E721A3C38100780280 /* FooObject.m */; };
 		4FCD3ECF219344AC00D4E72A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD3ECE219344AC00D4E72A /* AppDelegate.m */; };
 		4FCD3ED2219344AC00D4E72A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD3ED1219344AC00D4E72A /* ViewController.m */; };
 		4FCD3ED5219344AC00D4E72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD3ED3219344AC00D4E72A /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F3517E621A3C38100780280 /* FooObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooObject.h; sourceTree = "<group>"; };
+		4F3517E721A3C38100780280 /* FooObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooObject.m; sourceTree = "<group>"; };
 		4FCD3ECA219344AC00D4E72A /* NSInvocationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSInvocationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCD3ECD219344AC00D4E72A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4FCD3ECE219344AC00D4E72A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				4FCD3ED8219344AD00D4E72A /* LaunchScreen.storyboard */,
 				4FCD3EDB219344AD00D4E72A /* Info.plist */,
 				4FCD3EDC219344AD00D4E72A /* main.m */,
+				4F3517E621A3C38100780280 /* FooObject.h */,
+				4F3517E721A3C38100780280 /* FooObject.m */,
 			);
 			path = NSInvocationDemo;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCD3ED2219344AC00D4E72A /* ViewController.m in Sources */,
+				4F3517E821A3C38100780280 /* FooObject.m in Sources */,
 				4FCD3EDD219344AD00D4E72A /* main.m in Sources */,
 				4FCD3ECF219344AC00D4E72A /* AppDelegate.m in Sources */,
 			);

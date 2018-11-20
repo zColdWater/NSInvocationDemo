@@ -81,6 +81,10 @@
     NSLog(@"arg3:%@",_arg3);
     //---------------- 结束 查看参数 ----------------//
 
+    id expectInstance = [self dynamicCreateInstance];
+    SEL sayhello = NSSelectorFromString(@"sayHello");
+    [expectInstance performSelector:sayhello withObject:nil];
+    NSLog(@"expectInstance");
     
 //    NSLog(@"<%@:%@:%d>", NSStringFromClass([self class]), NSStringFromSelector(_cmd), __LINE__);
 
@@ -92,6 +96,30 @@
                   : (NSString* (^)(NSString *)) block {
     NSLog(@"personalMethod param1:%d, param2:%@",count,block(@"参数2"));
     return @"[真返回值]";
+}
+
+- (id)dynamicCreateInstance {
+    
+    id fooClass = [NSClassFromString(@"FooObject") alloc];
+    SEL fooInitSel = NSSelectorFromString(@"initWithWebView:");
+    NSMethodSignature *fooSign = [fooClass methodSignatureForSelector:fooInitSel];
+    NSInvocation *fooInvocation = [NSInvocation invocationWithMethodSignature:fooSign];
+    fooInvocation.selector = fooInitSel;
+    UIView *webview = [[UIView alloc] init];
+    [fooInvocation setArgument:&webview atIndex:2];
+    [fooInvocation invokeWithTarget:fooClass];
+    
+    // prevent crash
+    // stackoverflow: https://stackoverflow.com/questions/22018272/nsinvocation-returns-value-but-makes-app-crash-with-exc-bad-access
+    id __unsafe_unretained tempResultSet;
+    [fooInvocation getReturnValue:&tempResultSet];
+    id resultSet = tempResultSet;
+    
+    //    id fooResult = nil;
+    //    [fooInvocation getReturnValue:&fooResult];
+    //    NSLog(@"FooObject 对象实例:%@",fooResult);
+    
+    return resultSet;
 }
 
 
